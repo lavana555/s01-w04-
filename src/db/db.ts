@@ -22,8 +22,8 @@ export const setDB = (dataset?: Partial<DBType>) => {
     db.posts = dataset?.posts || [];
 };
 
-const mongoUri = process.env.MONGO_PATH || "mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0";
-// const mongoUri = 'mongodb+srv://Cluster54168:eW1RZXBtSlda@cluster54168.nm88g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster54168'
+// const mongoUri = process.env.MONGO_PATH || "mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0";
+const mongoUri = 'mongodb+srv://Cluster54168:eW1RZXBtSlda@cluster54168.nm88g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster54168'
 export const client = new MongoClient(mongoUri);
 
 export const blogCollection: Collection<BlogTypes> = client.db('03-db').collection<BlogTypes>(SETTINGS.BLOG_COLLECTION_NAME);

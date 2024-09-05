@@ -24,8 +24,8 @@ const setDB = (dataset) => {
     exports.db.posts = (dataset === null || dataset === void 0 ? void 0 : dataset.posts) || [];
 };
 exports.setDB = setDB;
-const mongoUri = process.env.MONGO_PATH || "mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0";
-// const mongoUri = 'mongodb+srv://Cluster54168:eW1RZXBtSlda@cluster54168.nm88g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster54168'
+// const mongoUri = process.env.MONGO_PATH || "mongodb://localhost:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+2.3.0";
+const mongoUri = 'mongodb+srv://Cluster54168:eW1RZXBtSlda@cluster54168.nm88g.mongodb.net/?retryWrites=true&w=majority&appName=Cluster54168';
 exports.client = new mongodb_1.MongoClient(mongoUri);
 exports.blogCollection = exports.client.db('03-db').collection(settings_1.SETTINGS.BLOG_COLLECTION_NAME);
 exports.postCollection = exports.client.db('03-db').collection(settings_1.SETTINGS.POST_COLLECTION_NAME);

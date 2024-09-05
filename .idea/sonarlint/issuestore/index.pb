@@ -5,10 +5,6 @@
 src/settings.ts,0/1/016ee71836a09a6c306900dce3d71cc95209fef4
 O
 src/posts/findPostController.ts,1/9/19b0441ada0184fbca6cdaf65fa4155ef68b76e5
-<
-src/db/db.ts,9/8/9847bafcb79ccaf66f75a07b31ca41e524d95ac2
-<
-src/index.ts,c/5/c5fb850250c7443c48a6c12b5cf6916773da31f1
 C
 src/utils/helper.ts,9/0/90e00de7aef24257058321ee0d138b3cd955ac8c
 D
