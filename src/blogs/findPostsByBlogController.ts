@@ -5,7 +5,7 @@ import {ObjectId} from "mongodb";
 export const findPostsByBlogController = async (req: Request, res: Response) => {
     const {
         sortBy = 'createdAt',
-        sortDirection = 'asc',
+        sortDirection = 'desc',
         pageNumber = '1',
         pageSize = '10',
         field = 'blogId'

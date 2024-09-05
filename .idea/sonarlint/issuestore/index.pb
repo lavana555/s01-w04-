@@ -13,5 +13,3 @@ c
 3src/middleware/post-middleware/putPostMiddleware.ts,b/b/bbbb90b7ab121652d4c9d85885452545adf833b2
 D
 src/db/post-types.ts,6/4/64a603c0d41d3261a625c2016e5bdd86ca67bdbe
-O
-src/posts/getPostsController.ts,4/e/4e5f0cd4867080e0f1ee7a6ba2e8ea4d0fff9637

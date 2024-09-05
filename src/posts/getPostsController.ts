@@ -4,7 +4,7 @@ import {postsRepository} from "../db/post-db-repository";
 export const getPostsController = async (req: Request, res: Response) => {
     const {
         sortBy = 'createdAt',
-        sortDirection = 'asc',
+        sortDirection = 'desc',
         pageNumber = '1',
         pageSize = '10'
     } = req.query;

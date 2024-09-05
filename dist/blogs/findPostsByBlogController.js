@@ -13,7 +13,7 @@ exports.findPostsByBlogController = void 0;
 const post_db_repository_1 = require("../db/post-db-repository");
 const mongodb_1 = require("mongodb");
 const findPostsByBlogController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { sortBy = 'createdAt', sortDirection = 'asc', pageNumber = '1', pageSize = '10', field = 'blogId' } = req.query;
+    const { sortBy = 'createdAt', sortDirection = 'desc', pageNumber = '1', pageSize = '10', field = 'blogId' } = req.query;
     const { id } = req.params;
     // Convert pageNumber and pageSize to numbers
     const page = parseInt(pageNumber, 10) || 1;

@@ -8,7 +8,7 @@ export const getBlogsController = async (req: Request, res: Response<any>) => {
     const {
         searchNameTerm = null,
         sortBy = 'createdAt',
-        sortDirection = 'asc',
+        sortDirection = 'desc',
         pageNumber = '1',
         pageSize = '10',
         field = 'name'

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getBlogsController = void 0;
 const blog_db_repository_1 = require("../db/blog-db-repository");
 const getBlogsController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { searchNameTerm = null, sortBy = 'createdAt', sortDirection = 'asc', pageNumber = '1', pageSize = '10', field = 'name' } = req.query;
+    const { searchNameTerm = null, sortBy = 'createdAt', sortDirection = 'desc', pageNumber = '1', pageSize = '10', field = 'name' } = req.query;
     // Convert pageNumber and pageSize to numbers
     const page = parseInt(pageNumber, 10) || 1;
     const size = parseInt(pageSize, 10) || 10;

@@ -12,7 +12,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.getPostsController = void 0;
 const post_db_repository_1 = require("../db/post-db-repository");
 const getPostsController = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    const { sortBy = 'createdAt', sortDirection = 'asc', pageNumber = '1', pageSize = '10' } = req.query;
+    const { sortBy = 'createdAt', sortDirection = 'desc', pageNumber = '1', pageSize = '10' } = req.query;
     // Convert pageNumber and pageSize to numbers
     const page = parseInt(pageNumber, 10) || 1;
     const size = parseInt(pageSize, 10) || 10;
