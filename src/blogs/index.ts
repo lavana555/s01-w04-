@@ -12,6 +12,7 @@ import {inputPostMiddleware} from "../middleware/post-middleware/inputPostMiddle
 import {postScheme, postSchemeBybBlog} from "../schema/post";
 import {createPostController} from "../posts/createPostController";
 import {findPostsByBlogController} from "./findPostsByBlogController";
+import {blogExistsMiddleware} from "../middleware/blogs-middleware/blogExistsMiddleware";
 
 export const blogsRouter = Router();
 
@@ -35,7 +36,8 @@ blogsRouter.get('/:id',
     findBlogController,
 );
 blogsRouter.get('/:id/posts',
-    inputMiddleware(blogIdSchema, 'params'),
+    blogExistsMiddleware,
+    queryValidateMiddleware(blogIdSchema),
     findPostsByBlogController,
 );
 

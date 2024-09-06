@@ -6,6 +6,7 @@ export const inputMiddleware = (schema: Joi.ObjectSchema, source: 'body' | 'para
     return (req: Request, res: Response, next: NextFunction) => {
         const { name, description, websiteUrl } = req.body;
         const validateParams = source === 'body' ? {name, description, websiteUrl} : req[source];
+
         const { error } = schema.validate(validateParams, { abortEarly: false });
 
         if (error) {
