@@ -97,4 +97,20 @@ export const blogsRepository = {
         return await filterRequest({searchNameTerm, sortBy, sortDirection, pageNumber, pageSize, field}, blogCollection)
 
     },
+    async resetBlogs(): Promise<{ success: boolean; error?: string }> {
+        try {
+            // This will delete all documents in the blogCollection
+            const deleteResult = await blogCollection.deleteMany({});
+
+            if (deleteResult.deletedCount > 0) {
+                return { success: true };
+            } else {
+                return { success: false, error: "No blogs to delete" };
+            }
+        } catch (err) {
+            console.error('Error resetting blogs:', err);
+            return { success: false, error: 'Error resetting blogs' };
+        }
+    }
+
 };

@@ -1,5 +1,5 @@
 import { PostTypes } from "./post-types";
-import { postCollection } from "./db";
+import {blogCollection, postCollection} from "./db";
 import { blogsRepository } from "./blog-db-repository";
 import {ObjectId, SortDirection} from "mongodb";
 import {filterRequest} from "../utils/filterRequest";
@@ -107,4 +107,19 @@ export const postsRepository = {
     }> {
        return await filterRequest({ searchNameTerm, sortBy, sortDirection, pageNumber, pageSize, field, isFindPostsByBlog}, postCollection)
     },
+    async resetPosts(): Promise<{ success: boolean; error?: string }> {
+        try {
+            // This will delete all documents in the blogCollection
+            const deleteResult = await postCollection.deleteMany({});
+
+            if (deleteResult.deletedCount > 0) {
+                return { success: true };
+            } else {
+                return { success: false, error: "No blogs to delete" };
+            }
+        } catch (err) {
+            console.error('Error resetting blogs:', err);
+            return { success: false, error: 'Error resetting blogs' };
+        }
+    }
 };

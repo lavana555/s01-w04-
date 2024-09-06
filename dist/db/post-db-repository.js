@@ -123,4 +123,22 @@ exports.postsRepository = {
             return yield (0, filterRequest_1.filterRequest)({ searchNameTerm, sortBy, sortDirection, pageNumber, pageSize, field, isFindPostsByBlog }, db_1.postCollection);
         });
     },
+    resetPosts() {
+        return __awaiter(this, void 0, void 0, function* () {
+            try {
+                // This will delete all documents in the blogCollection
+                const deleteResult = yield db_1.postCollection.deleteMany({});
+                if (deleteResult.deletedCount > 0) {
+                    return { success: true };
+                }
+                else {
+                    return { success: false, error: "No blogs to delete" };
+                }
+            }
+            catch (err) {
+                console.error('Error resetting blogs:', err);
+                return { success: false, error: 'Error resetting blogs' };
+            }
+        });
+    }
 };
